@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-
+// animation
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: AnimationContainer(),

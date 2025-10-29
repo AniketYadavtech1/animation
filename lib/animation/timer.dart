@@ -4,10 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class TimerController extends GetxController {
+
+
+
+
+
   RxInt seconds = 0.obs;
   Timer? timer;
   RxBool isRunning = false.obs;
-
 
   void startTimer() {
     if (timer != null && timer!.isActive) return;
