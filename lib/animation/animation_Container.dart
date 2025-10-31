@@ -1,3 +1,4 @@
+import 'package:animation/steper/ui/steper.dart';
 import 'package:animation/animation/timer.dart';
 import 'package:flutter/material.dart';
 
@@ -16,11 +17,18 @@ class _AnimationContainerState extends State<AnimationContainer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Animation"),
+      appBar: AppBar(
+        title: Text("Animation"),
         actions: [
-          IconButton(onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>TimerCountView()));
-          }, icon: Icon(Icons.timer))
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => TimerCountView()),
+              );
+            },
+            icon: Icon(Icons.timer),
+          ),
         ],
       ),
       body: Column(
@@ -63,7 +71,7 @@ class _AnimationContainerState extends State<AnimationContainer> {
               ),
             ),
           ),
-          SizedBox(height: 10,),
+          SizedBox(height: 10),
           Center(
             child: GestureDetector(
               onTap: () {
@@ -74,16 +82,23 @@ class _AnimationContainerState extends State<AnimationContainer> {
               child: AnimatedAlign(
                 duration: Duration(seconds: 1),
                 curve: Curves.easeInOut,
-                alignment: isAlign? Alignment.topCenter:Alignment.bottomCenter,
+                alignment: isAlign
+                    ? Alignment.topCenter
+                    : Alignment.bottomCenter,
                 child: Container(
                   color: Colors.blue,
                   width: 200,
                   height: 200,
-                  child: Center(child: Icon(Icons.ac_unit,color: Colors.white, size: 50)),
+                  child: Center(
+                    child: Icon(Icons.ac_unit, color: Colors.white, size: 50),
+                  ),
                 ),
               ),
             ),
           ),
+          TextButton(onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>SteperWidget()));
+          }, child: Text("Steppere")),
         ],
       ),
     );
