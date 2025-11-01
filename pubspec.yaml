@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   get: ^4.7.2
   easy_stepper: ^0.9.1
+  flutter_quill: ^11.5.0
 
 dev_dependencies:
   flutter_test:
