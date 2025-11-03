@@ -1,6 +1,7 @@
-import 'package:animation/steper/ui/steper.dart';
-import 'package:animation/animation/timer.dart';
+import 'package:animation/view/clock/timer.dart';
 import 'package:flutter/material.dart';
+
+import '../steper/ui/steper.dart';
 
 class AnimationContainer extends StatefulWidget {
   const AnimationContainer({super.key});
@@ -96,9 +97,15 @@ class _AnimationContainerState extends State<AnimationContainer> {
               ),
             ),
           ),
-          TextButton(onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>SteperWidget()));
-          }, child: Text("Steppere")),
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SteperWidget()),
+              );
+            },
+            child: Text("Steppere"),
+          ),
         ],
       ),
     );

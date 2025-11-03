@@ -4,11 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class TimerController extends GetxController {
-
-
-
-
-
   RxInt seconds = 0.obs;
   Timer? timer;
   RxBool isRunning = false.obs;
@@ -21,12 +16,10 @@ class TimerController extends GetxController {
     });
   }
 
-
   void stopTimer() {
     timer?.cancel();
     isRunning.value = false;
   }
-
 
   void resetTimer() {
     timer?.cancel();
@@ -40,9 +33,6 @@ class TimerController extends GetxController {
     super.onClose();
   }
 }
-
-
-
 
 class TimerCountView extends StatelessWidget {
   final TimerController controller = Get.put(TimerController());
@@ -90,5 +80,6 @@ class TimerCountView extends StatelessWidget {
       ),
     );
   }
+
   String _twoDigit(int n) => n.toString().padLeft(2, '0');
 }

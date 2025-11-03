@@ -1,11 +1,8 @@
-import 'package:animation/animation/animation_Container.dart';
-import 'package:animation/steper/ui/controller.dart';
+import 'package:animation/view/animation/animation_Container.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() {
-  Get.put(StepController());
   runApp(const MyApp());
 }
 
@@ -14,7 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
