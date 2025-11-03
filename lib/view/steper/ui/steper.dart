@@ -14,6 +14,8 @@ class SteperWidget extends StatelessWidget {
       appBar: AppBar(title: Text("Horizontal Stepper")),
       body: Obx(
         () => Stepper(
+          connectorColor: MaterialStateProperty.all(Colors.blue),
+
           type: StepperType.horizontal,
           currentStep: controller.currentStep.value,
           steps: [
@@ -21,20 +23,35 @@ class SteperWidget extends StatelessWidget {
               title: Text("Login"),
               content: LoginPageWidget(),
               isActive: controller.currentStep.value >= 0,
+              state: controller.currentStep.value > 0
+                  ? StepState.complete
+                  : controller.currentStep.value == 0
+                  ? StepState.editing
+                  : StepState.indexed,
             ),
             Step(
               title: Text("Details"),
               content: DetailsPageWidget(),
               isActive: controller.currentStep.value >= 1,
+              state: controller.currentStep.value > 1
+                  ? StepState.complete
+                  : controller.currentStep.value == 1
+                  ? StepState.editing
+                  : StepState.indexed,
             ),
             Step(
               title: Text("Home"),
               content: HomeScreenView(),
               isActive: controller.currentStep.value >= 2,
+              state: controller.currentStep.value > 2
+                  ? StepState.complete
+                  : controller.currentStep.value == 2
+                  ? StepState.editing
+                  : StepState.indexed,
             ),
           ],
-          onStepContinue: controller.onNext, // ✅ only logic
-          onStepCancel: controller.onBack, // ✅ only logic
+          onStepContinue: controller.onNext,
+          onStepCancel: controller.onBack,
           onStepTapped: null,
 
           controlsBuilder: (context, details) {

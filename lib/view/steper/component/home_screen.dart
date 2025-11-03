@@ -11,6 +11,6 @@ class HomeScreenView extends StatefulWidget {
 class _HomeScreenViewState extends State<HomeScreenView> {
   @override
   Widget build(BuildContext context) {
-    return Container(child: Column(children: [Text("Welcome to back")]));
+    return Container(child: Column(children: [Text("Home")]));
   }
 }
